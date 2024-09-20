@@ -13,7 +13,7 @@ html {
 body {
     padding: 0;
     margin: 0;
-    background-color: hsl(0,0%,99%);
+    background-color: hsl(0, 0%, 99%);
 
     * {
         transition: all .5s ease-in;
@@ -101,11 +101,14 @@ p {
     line-height: 150%;
 }
 
-label,input,textarea{
+label,
+input,
+textarea {
     font-family: Arial, Helvetica, sans-serif;
     text-transform: lowercase;
 }
-label{
+
+label {
     font-weight: 600;
 }
 
@@ -268,6 +271,87 @@ label{
     }
 }
 
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 350px);
+    gap: 1rem;
+    padding: 1rem;
+    
+    &>.story {
+        background-size: cover;
+        height: 100%;
+
+        .popup-wrap {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: hsla(0, 0%, 100%, 90%);
+            height: 0px;
+            overflow: hidden;
+        }
+        
+        &:hover > .popup-wrap{
+            padding: 1rem;
+            height: 100%;
+        }
+
+        &:nth-child(1) {
+            grid-column: span 2;
+            background-position: 60% 50%;
+        }
+
+        &:nth-child(2) {
+            grid-column: span 1;
+        }
+
+        &:nth-child(3) {
+            grid-row: span 2;
+            background-position: 100% 10%;
+        }
+
+        &:nth-child(4) {
+            grid-row: span 2;
+            background-position: 65% 10%;
+        }
+
+        &:nth-child(5) {
+            grid-column: span 1;
+        }
+
+        &:nth-child(6) {
+            grid-column: span 2;
+            background-position: 60% 60%;
+        }
+    }
+}
+
+@media (max-width: 960px){
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+
+        &>.story{
+            grid-column: span 1!important;
+            grid-row: span 1!important;
+        }
+    }
+}
+
+@media (max-width: 720px){
+    .grid{
+        display: flex;
+        flex-direction: column;
+
+        &>.story{
+            height: 500px;
+        }
+    }
+}
+
 .row {
     display: flex;
     flex-direction: row;
@@ -292,7 +376,7 @@ label{
             align-items: center;
             justify-content: center;
 
-            p{
+            p {
                 font-size: 1.5;
             }
         }
@@ -314,7 +398,7 @@ label{
     justify-content: center;
     background-color: hsla(0, 0%, 0%, .05);
 
-    h2{
+    h2 {
         text-align: center;
     }
 }
@@ -329,7 +413,7 @@ label{
     /* justify-content: center; */
     padding: 0 1rem;
 
-    &:nth-child(2)>*{
+    &:nth-child(2)>* {
         flex-direction: row-reverse;
     }
 
@@ -374,18 +458,20 @@ label{
 }
 
 @media (max-width: 60rem) {
-    .overflow-h>*,.overflow-h:nth-child(2)>*{
+
+    .overflow-h>*,
+    .overflow-h:nth-child(2)>* {
         flex-direction: column;
         width: 75vw;
 
-        .txt{
+        .txt {
             width: 100%;
             min-width: 0;
             /* flex: 1; */
         }
     }
 
-    .overflow-h > * img{
+    .overflow-h>* img {
         min-width: 0;
         width: 100%;
         max-width: 100%;
@@ -416,16 +502,17 @@ label{
     background-color: hsla(0, 0%, 0%, .0);
 }
 
-#contact{
+#contact {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 
-    &>*{
+    &>* {
         min-width: 300px;
         flex: 1;
     }
-    form{
+
+    form {
         display: flex;
         flex-direction: column;
         padding: 6rem 2rem;
@@ -434,24 +521,25 @@ label{
         gap: .5rem;
         background-color: hsla(0, 0%, 0%, .05);
 
-        &>*{
+        &>* {
             text-align: left;
             width: 100%;
             max-width: 580px;
         }
 
-        input,textarea{
+        input,
+        textarea {
             padding: .5rem;
             outline: none;
-            border:none;
+            border: none;
             margin-bottom: 1rem;
         }
 
-        textarea{
+        textarea {
             min-height: 225px;
         }
 
-        button{
+        button {
             width: fit-content;
         }
     }
