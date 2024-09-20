@@ -127,7 +127,7 @@ label {
 
 #stats,
 #services,
-#mission {
+#mission, footer {
     display: flex;
     flex-direction: column;
     padding: 6rem 2rem;
@@ -544,4 +544,19 @@ label {
             width: fit-content;
         }
     }
+
+    img{
+        max-height: 700px;
+        height: 100%;
+        min-height: 300px;
+    }
+}
+@media (max-width: 720px){
+    #contact img{
+        display: none;
+    }
+}
+footer{
+    background-color: #444;
+    *,a{color: white;}
 }
