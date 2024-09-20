@@ -1,0 +1,450 @@
+/* Fonts */
+@font-face {
+    font-family: "Soap Box Star";
+    src:
+        url("assets/fonts/Helotypo.woff2") format("woff");
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: hsl(0,0%,99%);
+
+    * {
+        transition: all .5s ease-in;
+        -moz-transition: all .5s ease-in;
+        -ms-transition: all .5s ease-in;
+        -o-transition: all .5s ease-in;
+        -webkit-transition: all .5s ease-in;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+}
+
+header {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 2rem 6rem;
+    background-color: hsla(0, 0%, 0%, .1);
+    background-position: right 35%;
+    background-size: 150%;
+
+    h1 {
+        font-size: calc(3rem + 5vw);
+        color: white;
+    }
+
+    .sub {
+        max-width: 60rem;
+        font-size: 3.5rem;
+        text-align: right;
+        font-weight: 600;
+        color: hsla(0, 0%, 100%, .9);
+
+        span {
+            color: white;
+        }
+    }
+}
+
+@media (max-width: 50rem) {
+    header {
+        align-items: center;
+
+        p,
+        h1,
+        .sub {
+            text-align: center;
+        }
+
+        .sub {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Soap Box Star", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    text-transform: lowercase;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 150%;
+}
+
+label,input,textarea{
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: lowercase;
+}
+label{
+    font-weight: 600;
+}
+
+* {
+    margin: 0;
+}
+
+:root {
+    font-size: 12px;
+}
+
+.wrap-md {
+    max-width: 90rem;
+}
+
+#stats,
+#services,
+#mission {
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#services h2 {
+    text-align: center;
+}
+
+#mission {
+    background-color: hsla(0, 0%, 0%, .05);
+
+    .row {
+        &>*:nth-child(1) {
+            flex: 2;
+            font-size: 3rem;
+        }
+
+        &>*:nth-child(2) {
+            flex: 3;
+            font-size: 2rem;
+        }
+    }
+}
+
+.bento {
+    width: 100%;
+
+    * {
+        font-family: "Soap Box Star", Arial, Helvetica, sans-serif;
+    }
+
+    &>* {
+        padding: 3rem;
+        vertical-align: middle;
+    }
+
+    &>*:nth-child(3),
+    &>*:nth-child(4),
+    &>*:nth-child(5) {
+        font-size: 3.5rem;
+    }
+
+    &>*:nth-child(1),
+    &>*:nth-child(2) {
+        font-size: 5rem;
+    }
+}
+
+@media(min-width: 995px) {
+    .bento {
+
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+
+        &>*:nth-child(3),
+        &>*:nth-child(4),
+        &>*:nth-child(5) {
+            border-top: 1px solid black;
+        }
+
+        &>*:nth-child(3),
+        &>*:nth-child(4) {
+            border-right: 1px solid black;
+        }
+
+        &>*:nth-child(1) {
+            grid-column: span 9;
+            border-right: 1px solid black;
+        }
+
+        &>*:nth-child(2) {
+            grid-column: span 3;
+        }
+
+        &>*:nth-child(3) {
+            grid-column: span 5;
+        }
+
+        &>*:nth-child(4) {
+            grid-column: span 3;
+        }
+
+        &>*:nth-child(5) {
+            grid-column: span 4;
+        }
+    }
+}
+
+@media (max-width: 995px) {
+    .bento {
+        display: flex;
+        flex-direction: row;
+        gap: 0;
+        flex-wrap: wrap;
+
+        &>*,
+        &>*:nth-child(1),
+        &>*:nth-child(2) {
+            flex: 1;
+            min-width: 27rem;
+            border: none;
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 600;
+        }
+
+        &>*:nth-child(1),
+        &>*:nth-child(3) {
+            border-right: 1px solid black;
+        }
+
+        &>*:nth-child(3),
+        &>*:nth-child(4),
+        &>*:nth-child(5) {
+            border-top: 1px solid black;
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .bento {
+        gap: 1rem;
+        flex-direction: column;
+
+        &>*,
+        &>*:nth-child(1),
+        &>*:nth-child(2),
+        &>*:nth-child(3),
+        &>*:nth-child(4),
+        &>*:nth-child(5) {
+            border: none;
+            border-right: none;
+            border-top: none;
+            background-color: hsla(0, 0%, 0%, .05);
+            font-size: 2rem;
+            line-height: 125%;
+            padding: 2rem 1rem;
+        }
+    }
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+
+    &[data-row-alt="wrap"] {
+        flex-wrap: wrap;
+
+        &>* {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            gap: 1.25rem;
+            min-width: 25rem;
+        }
+
+        &[data-layout-type="tiles"]>* {
+            padding: 2rem;
+            min-height: 33rem;
+            background-color: #222;
+            color: white;
+            align-items: center;
+            justify-content: center;
+
+            p{
+                font-size: 1.5;
+            }
+        }
+    }
+}
+
+
+.col {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#success-stories {
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: hsla(0, 0%, 0%, .05);
+
+    h2{
+        text-align: center;
+    }
+}
+
+.overflow-h {
+    display: flex;
+    flex-direction: row;
+    width: calc(100vw - 1.25rem);
+    overflow-x: auto;
+    gap: 2rem;
+    scroll-snap-type: x mandatory;
+    /* justify-content: center; */
+    padding: 0 1rem;
+
+    &:nth-child(2)>*{
+        flex-direction: row-reverse;
+    }
+
+    &>* {
+        display: flex;
+        flex-direction: row;
+        gap: 0px;
+        border-radius: .5rem;
+        background-color: hsla(0, 0%, 0%, .05);
+        scroll-snap-align: center;
+        justify-content: center;
+        align-items: center;
+        /* overflow: hidden; */
+
+        img {
+            width: 20%;
+            height: 25rem;
+            flex-grow: 0;
+            flex: 0;
+            max-width: 30%;
+            min-width: 25rem;
+            border-radius: .5rem;
+            background-color: hsla(0, 0%, 0%, .1);
+            object-fit: cover;
+        }
+
+        &>.txt {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            flex: 3;
+            width: 70%;
+            min-width: 40rem;
+
+            &h3 {
+                font-size: 2rem;
+                line-height: 125%;
+            }
+        }
+    }
+}
+
+@media (max-width: 60rem) {
+    .overflow-h>*,.overflow-h:nth-child(2)>*{
+        flex-direction: column;
+        width: 75vw;
+
+        .txt{
+            width: 100%;
+            min-width: 0;
+            /* flex: 1; */
+        }
+    }
+}
+
+
+#success-stories .overflow-h::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+    margin: 2px 2px;
+    padding: 5px 5px;
+}
+
+#success-stories .overflow-h::-webkit-scrollbar-track {
+    background-color: hsla(0, 0%, 0%, 0);
+}
+
+#success-stories .overflow-h::-webkit-scrollbar-thumb {
+    background-color: hsla(0, 0%, 0%, .0);
+    width: 1px;
+    transition: 1s all;
+}
+
+#success-stories .overflow-h::-webkit-scrollbar-thumb:hover {
+    background-color: hsla(0, 0%, 0%, .0);
+}
+
+#contact{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &>*{
+        min-width: 300px;
+        flex: 1;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        padding: 6rem 2rem;
+        justify-content: center;
+        align-items: flex-start;
+        gap: .5rem;
+        background-color: hsla(0, 0%, 0%, .05);
+
+        &>*{
+            text-align: left;
+            width: 100%;
+            max-width: 580px;
+        }
+
+        input,textarea{
+            padding: .5rem;
+            outline: none;
+            border:none;
+            margin-bottom: 1rem;
+        }
+
+        textarea{
+            min-height: 225px;
+        }
+
+        button{
+            width: fit-content;
+        }
+    }
+}

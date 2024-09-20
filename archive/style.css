@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    font-size: 12px;
+
+    --max-width-standard: 150rem;
+    --min-width-standard: 300px;
+    --horizontal-padding-standard: 2rem;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #111;
+    color: white;
+
+    * {
+        transition: all .5s ease-in;
+        -moz-transition: all .5s ease-in;
+        -ms-transition: all .5s ease-in;
+        -o-transition: all .5s ease-in;
+        -webkit-transition: all .5s ease-in;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 125%;
+    letter-spacing: 4.2px;
+    text-transform: capitalize;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 125%;
+    text-transform: capitalize;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 125%;
+    text-transform: capitalize;
+}
+
+p,li {
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: var(--horizontal-padding-standard);
+
+    .content {
+        max-width: var(--max-width-standard);
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    img{
+        height: 4rem;
+        width: 4rem;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        gap: 1.5rem;
+
+        li {
+            list-style-type: none;
+        }
+    }
+
+    button {
+        display: flex;
+        padding: .5rem 2rem;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    background-color: grey;
+    text-align: center;
+}
+
+.overlap-prev {
+    margin-top: calc(5% * -1);
+    padding: var(--horizontal-padding-standard);
+
+    &>*{
+        max-width: var(--max-width-standard);
+    }
+}
+
+@media (max-width: 720px){
+    .overlap-prev{
+        margin-top: 0;
+    }
+}
+
+.tiles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    .tile {
+        display: flex;
+        flex-direction: column;
+        background-color: #090909;
+        padding: 1rem;
+        border-radius: .5rem;
+        min-width: 20rem;
+        width: 20%;
+    }
+}
+
+@media (max-width: 720px){
+    .tiles .tile{
+        width: 100%;
+    }
+}
+.split {
+    display: flex;
+    padding: 5rem var(--horizontal-padding-standard);
+    justify-content: center;
+    align-items: center;
+
+    .content {
+        max-width: var(--max-width-standard);
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        &>*:nth-child(1) {
+            flex: 2;
+            width: 100%;
+        }
+
+        &>*:nth-child(2) {
+            flex: 5;
+            width: 100%;
+        }
+
+        &>*{
+            min-width: var(--min-width-standard);
+        }
+    }
+}
+
+@media (max-width: 720){
+
+}
+
+#works {
+    display: flex;
+    padding: 5rem var(--horizontal-padding-standard);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h2 {
+        width: 100%;
+        max-width: var(--max-width-standard);
+    }
+}
+
+.bento {
+    display: grid;
+    gap: 2rem;
+    max-width: var(--max-width-standard);
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+
+    &>* {
+        min-height: 500px;
+        min-width: var(--min-width-standard);
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: end;
+        padding: 1rem;
+        background-image: url('assets/two-woman-in-the-crowd-at-a-music-festival-2023-11-27-05-01-52-utc.jpg');
+        background-size: cover;
+
+        &:nth-child(1),
+        &:nth-child(4) {
+            grid-column: span 2;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+            grid-column: span 1;
+        }
+
+        .content {
+            width: 100%;
+            padding: 1rem;
+            background-color: hsla(0, 0%, 100%, .2);
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .bento {
+        grid-template-columns: repeat(2, 1fr);
+
+        &>*{
+            grid-column: span 1!important;
+        }
+    }
+}
+@media (max-width: 720px) {
+    .bento {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+#services{
+    padding: 5rem var(--horizontal-padding-standard);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    &>*{
+        max-width: 150rem;
+    }
+
+    .content{
+        display: flex;
+        flex-direction: row;
+        gap: 4rem;
+        width: 100%;
+        scroll-snap-type: x mandatory;
+        /* flex-wrap: wrap; */
+        text-align: center;
+        overflow: auto;
+        
+        .service{
+            scroll-snap-align: center;
+            display:flex;
+            flex-direction: column;
+            /* flex: 1; */
+            gap: 1rem;
+            padding: 3rem 2rem;
+            min-width: var(--min-width-standard);
+            min-height: 400px;
+            /* min-width: 300px; */
+            width: 80vw;
+            background-color: #222;
+        }
+    }
+}
+
+#upcoming{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem var(--horizontal-padding-standard);
+    flex-wrap: wrap;
+    
+    &>*{
+        max-width: 150rem;
+        display:flex;
+        flex-direction: row;
+        gap: 2rem;
+        width: 100%;
+        flex-wrap: wrap;
+        padding: 1rem;
+        
+        &>div{
+            min-width: var(--min-width-standard);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: #222;
+
+            img{
+                width: 100%;
+            }
+
+            .content{
+                padding: 1rem var(--horizontal-padding-standard);
+                gap: 1rem;
+            }
+        }
+    }
+}
