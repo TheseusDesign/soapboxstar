@@ -326,7 +326,7 @@ label {
 
         &:nth-child(6) {
             grid-column: span 2;
-            background-position: 60% 60%;
+            background-position: 80% 60%;
         }
     }
 }
